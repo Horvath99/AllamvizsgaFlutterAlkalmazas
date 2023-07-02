@@ -87,13 +87,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     blurRadius: 15
                   )
                 ], 
-                text: "Login", 
+                text: "Bejelentkezés", 
                 fontSize: 35),
             ),
             FormHelper.inputFieldWidget(
               context,
               "username",
-              "UserName",
+              "Email cím",
               (onValidateVal){
                 if(onValidateVal.isEmpty){
                   return "Username cant be empty";
@@ -119,7 +119,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: FormHelper.inputFieldWidget(
                 context,
                 "password",
-                "Password",
+                "Jelszó",
                 (onValidateVal){
                   if(onValidateVal.isEmpty){
                     return "Password cant be empty";
@@ -163,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     children: <TextSpan>[
                       TextSpan(
-                        text: 'Forget Password?',
+                        text: 'Elfelejtett jelszó?',
                         style: const TextStyle(
                           color: Colors.white,
                           decoration: TextDecoration.underline
@@ -180,7 +180,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 20,),
             Center(
               child: FormHelper.submitButton(
-                "Login",
+                "Bejelentkezés",
                 (){
                   if(validateAndSave()){
                     setState(() {
@@ -217,20 +217,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 txtColor:Colors.white),
             ),
             const SizedBox(height: 20,),
-            const Center(child: CustomText(shadows: [BoxShadow(color: Colors.blue,spreadRadius: 5,blurRadius: 15)], text: "OR", fontSize: 25)),
+            const Center(child: CustomText(shadows: [BoxShadow(color: Colors.blue,spreadRadius: 5,blurRadius: 15)], text: "VAGY", fontSize: 25)),
             const SizedBox(height: 20,),
             Align(
               alignment: Alignment.bottomCenter,
               child: RichText(
                 text:  TextSpan(
-                  text: "Dont have an account? ",
+                  text: "Nincs fiókod? ",
                   style: const TextStyle(
                     color:Colors.grey,
                     fontSize: 14,
                   ),
                   children: <TextSpan>[
                     TextSpan(
-                      text: 'Sign up?',
+                      text: 'Regisztrálj',
                       style: const TextStyle(
                         color: Colors.white,
                         decoration: TextDecoration.underline

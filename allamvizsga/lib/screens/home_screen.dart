@@ -67,21 +67,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   spreadRadius: 5,
                   blurRadius: 15
                 )
-              ], text: "PLAY", fontSize: 25),
+              ], text: "JÁTÉK", fontSize: 25),
           ),
           //play sor
           SingleChildScrollView(
             scrollDirection:Axis.horizontal,
             child: Row(
               children: [
-                _buildCard(context, const Icon(Icons.play_circle),"Offline",(){
+                _buildCard(context, const Icon(Icons.play_circle),"Egyszemélyes mód",(){
                   Navigator.pushNamed(context, '/startQuiz');}),
                 const SizedBox(width: 5,),
-                _buildCard(context, const Icon(Icons.play_arrow),"Online",(){
+                _buildCard(context, const Icon(Icons.play_arrow),"Online mód",(){
                   Navigator.pushNamed(context, '/enterRoom');
                 }),
                 const SizedBox(width: 5,),
-                _buildCard(context, const Icon(Icons.flash_auto_sharp),"Flash Quiz",(){
+                _buildCard(context, const Icon(Icons.flash_auto_sharp),"Flash Quiz mód",(){
                   Navigator.pushNamed(context, FlashQuizScreen.routName);
                 }),
               ]),
@@ -99,22 +99,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   spreadRadius: 5,
                   blurRadius: 15
                 )
-              ], text: "PROFILE", fontSize: 25),
+              ], text: "PROFIL", fontSize: 25),
           ),
           //profile sor
           SingleChildScrollView(
             scrollDirection:Axis.horizontal,
             child: Row(
               children: [
-                _buildCard(context, const Icon(Icons.person),"My profile",(){
+                _buildCard(context, const Icon(Icons.person),"Az én profilom",(){
                   Navigator.pushNamedAndRemoveUntil(context, '/profile', (route) => false);
                 }),
                 const SizedBox(width: 5,),
-                _buildCard(context, const Icon(Icons.update),"Update Profile",(){}),
+                _buildCard(context, const Icon(Icons.security),"Jelszó csere",(){}),
                 const SizedBox(width: 5,),
-                _buildCard(context, const Icon(Icons.security),"Change password",(){}),
-                const SizedBox(width: 5,),
-                _buildCard(context, const Icon(Icons.exit_to_app),"Log Out",(){SharedService.logout(context);}),
+                _buildCard(context, const Icon(Icons.exit_to_app),"Kijelentkezés",(){SharedService.logout(context);}),
 
               ]),
           ),
@@ -131,14 +129,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   spreadRadius: 5,
                   blurRadius: 15
                 )
-              ], text: "SETTINGS", fontSize: 25),
+              ], text: "BEÁLLíTÁSOK", fontSize: 25),
           ),
           //Settings sor
           SingleChildScrollView(
             scrollDirection:Axis.horizontal,
             child: Row(
               children: [
-                _buildCard(context, const Icon(Icons.dangerous),"Difficulty",(){
+                _buildCard(context, const Icon(Icons.dangerous),"Nehézség",(){
                   showDialog(
                     context: context, builder: (BuildContext context){
                       return AlertDialog(
@@ -151,23 +149,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                 setState(() {
                                   SharedService.difficulty="Nehez";
                                 });
-                              }, text: "Nehez")),
+                              }, text: "Nehéz")),
                             Container(
                               margin: const EdgeInsets.all(5),
                               child: CustomButton(onTap: (){
                                 SharedService.difficulty="Kozepes";
-                              }, text: "Kozepes")),
+                              }, text: "Közepes")),
                             Container(
                               margin: const EdgeInsets.all(5),
                               child: CustomButton(onTap: (){
                                 SharedService.difficulty="Konnyu";
-                              }, text: "Konnyu"))
+                              }, text: "Könnyű"))
                         ]
                       );
                     });
                 }),
                 const SizedBox(width: 5,),
-                _buildCard(context, const Icon(Icons.language),"Languange",(){
+                _buildCard(context, const Icon(Icons.language),"Nyelv",(){
                     showDialog(
                     context: context, builder: (BuildContext context){
                       return AlertDialog(
@@ -201,13 +199,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   spreadRadius: 5,
                   blurRadius: 15
                 )
-              ], text: "STATISTICS", fontSize: 25),
+              ], text: "STATISZTIKÁK", fontSize: 25),
           ),
           SingleChildScrollView(
             scrollDirection:Axis.horizontal,
             child: Row(
               children: [
-                _buildCard(context, const Icon(Icons.games),"Offline stats",(){
+                _buildCard(context, const Icon(Icons.games),"Eredményeim",(){
                    Navigator.pushNamed(context, '/statistics');
                 }),
                 const SizedBox(width: 5,),
@@ -215,10 +213,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(width: 5,),
                 _buildCard(context, const Icon(Icons.leaderboard),"Ranglista",(){
                    Navigator.pushNamed(context, LeaderboardScreen.routName);
-                }),
-                const SizedBox(width: 5,),
-                _buildCard(context, const Icon(Icons.school),"Flash Quizes",(){
-                 
                 }),
               ]),
           ),

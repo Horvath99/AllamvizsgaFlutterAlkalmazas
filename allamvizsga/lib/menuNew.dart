@@ -50,9 +50,9 @@ void initState() {
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Column(children: lives > 0 ? [
-                const TitleSection(text: "Subjects"),
+                const TitleSection(text: "Tantárgyak"),
                 CarSlider(),
-                const TitleSection(text: "Chapters"),
+                const TitleSection(text: "Fejezetek"),
                 ChapterList(),
               ] : [
                 const CustomText(shadows:
@@ -63,7 +63,7 @@ void initState() {
                     color: Colors.blue
                   )
                  ], 
-                 text: "Elfogytak az eleteid,gyere vissza kesobb", 
+                 text: "Elfogytak az életeid,gyere vissza később", 
                  fontSize: 30)
               ]
               ),

@@ -1,6 +1,6 @@
 class Config{
   static const String appName = "Allam vizsga";
-  static const apiURL = "192.168.1.4:8000";
+  static const apiURL = "192.168.1.3:8000";
   static const loginAPI = "api/v1/users/login";
   static const registerAPI = "api/v1/users";
   static const getUsersAPI = "api/v1/users";
